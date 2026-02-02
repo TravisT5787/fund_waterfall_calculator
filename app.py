@@ -27,14 +27,7 @@ mgmt_fee_basis = st.sidebar.selectbox(
 )
 
 st.sidebar.markdown("---")
-st.sidebar.subheader("AI Configuration")
-st.sidebar.markdown("*Required for waterfall interpretation*")
-
-api_key = st.sidebar.text_input(
-    "Anthropic API Key",
-    type="password",
-    help="Your Anthropic API key for Claude AI waterfall interpretation"
-)
+api_key = st.secrets.get("ANTHROPIC_API_KEY", "")
 
 # =============================================================================
 # HELPER FUNCTIONS
